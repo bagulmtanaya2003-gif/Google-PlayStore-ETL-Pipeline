@@ -1,9 +1,7 @@
 import streamlit as st
 import pandas as pd
 
-# -------------------------------------------------
 # Page Configuration
-# -------------------------------------------------
 
 st.set_page_config(
     page_title="Model Performance",
@@ -11,15 +9,12 @@ st.set_page_config(
     layout="wide"
 )
 
-# -------------------------------------------------
 # Load Data
-# -------------------------------------------------
 
 performance_df = pd.read_csv("model_comparison.csv")
 
-# -------------------------------------------------
+
 # Title
-# -------------------------------------------------
 
 st.title("📈 Model Performance")
 
@@ -29,9 +24,7 @@ st.write(
 
 st.divider()
 
-# -------------------------------------------------
 # Model Comparison Table
-# -------------------------------------------------
 
 st.subheader("📊 Model Comparison")
 
@@ -42,9 +35,7 @@ st.dataframe(
 
 st.divider()
 
-# -------------------------------------------------
 # Summary
-# -------------------------------------------------
 
 st.subheader("📋 Performance Summary")
 
@@ -58,9 +49,7 @@ st.success("""
 
 st.divider()
 
-# -------------------------------------------------
 # Key Insight
-# -------------------------------------------------
 
 st.info("""
 ### 💡 Key Insight

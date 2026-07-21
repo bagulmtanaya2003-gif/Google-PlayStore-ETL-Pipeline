@@ -11,23 +11,22 @@ st.set_page_config(
     layout="wide"
 )
 
-
 # Sidebar section for project branding and information
 with st.sidebar:
 
-    # Display project logo
+# Display project logo
     st.image(
         "https://cdn-icons-png.flaticon.com/512/888/888879.png",
         width=80
     )
 
-    # Display project title
+# Display project title
     st.title("Google Play Store")
 
-    # Display project description
+# Display project description
     st.write("Machine Learning Project")
 
-    # Display model information
+# Display model information
     st.success("Random Forest Model")
 
 
@@ -43,16 +42,11 @@ It analyzes ratings, categories, reviews, pricing, application size and relation
 between different features.
 """)
 
-
 # Load cleaned dataset
 df = pd.read_csv("playstore_clean.csv")
 
-
-
 # Calculate dataset information
-
 rows = df.shape[0]
-
 columns = df.shape[1]
 
 missing_values = int(
@@ -63,62 +57,48 @@ duplicates = int(
     df.duplicated().sum()
 )
 
-
-
 # Dataset overview section
 st.subheader("📊 Dataset Overview")
-
 
 # Create information cards
 col1, col2, col3, col4 = st.columns(4)
 
-
-
 with col1:
 
-    # Display total rows
+# Display total rows
     st.metric(
         "Total Records",
         rows
     )
 
-
 with col2:
 
-    # Display total columns
+# Display total columns
     st.metric(
         "Features",
         columns
     )
 
-
 with col3:
 
-    # Display missing values
+# Display missing values
     st.metric(
         "Missing Values",
         missing_values
     )
 
-
 with col4:
 
-    # Display duplicate records
+# Display duplicate records
     st.metric(
         "Duplicate Rows",
         duplicates
     )
 
-
-
 st.divider()
 
-
-
 # Rating distribution analysis
-
 st.subheader("⭐ Distribution of App Ratings")
-
 
 fig = px.histogram(
     df,
@@ -130,23 +110,15 @@ fig = px.histogram(
     }
 )
 
-
 # Display interactive histogram
 st.plotly_chart(
     fig,
     use_container_width=True
 )
-
-
-
 st.divider()
 
-
-
 # Top categories analysis
-
 st.subheader("📂 Top 10 Google Play Store Categories")
-
 
 category = (
     df["Category"]
@@ -155,12 +127,10 @@ category = (
     .reset_index()
 )
 
-
 category.columns = [
     "Category",
     "Applications"
 ]
-
 
 fig = px.bar(
     category,
@@ -170,28 +140,20 @@ fig = px.bar(
     title="Top Categories Based on Number of Applications"
 )
 
-
 # Show values on bars
 fig.update_traces(
     textposition="outside"
 )
 
-
 st.plotly_chart(
     fig,
     use_container_width=True
 )
-
-
-
 st.divider()
-
-
 
 # Reviews and rating relationship
 
 st.subheader("📝 Reviews vs Rating Relationship")
-
 
 fig = px.scatter(
     df,
@@ -208,22 +170,14 @@ fig = px.scatter(
     ]
 )
 
-
 st.plotly_chart(
     fig,
     use_container_width=True
 )
-
-
-
 st.divider()
 
-
-
 # App size and rating relationship
-
 st.subheader("📦 App Size vs Rating")
-
 
 fig = px.scatter(
     df,
@@ -239,22 +193,14 @@ fig = px.scatter(
     ]
 )
 
-
 st.plotly_chart(
     fig,
     use_container_width=True
 )
-
-
-
 st.divider()
 
-
-
 # Free and paid application comparison
-
 st.subheader("💰 Free vs Paid Applications")
-
 
 type_count = (
     df["Type"]
@@ -262,12 +208,10 @@ type_count = (
     .reset_index()
 )
 
-
 type_count.columns=[
     "Type",
     "Count"
 ]
-
 
 fig = px.pie(
     type_count,
@@ -277,22 +221,15 @@ fig = px.pie(
     hole=0.4
 )
 
-
 st.plotly_chart(
     fig,
     use_container_width=True
 )
-
-
-
 st.divider()
-
-
 
 # Price distribution analysis
 
 st.subheader("💲 Price Distribution")
-
 
 fig = px.histogram(
     df,
@@ -301,27 +238,19 @@ fig = px.histogram(
     title="Distribution of Application Prices"
 )
 
-
 st.plotly_chart(
     fig,
     use_container_width=True
 )
 
-
-
 st.divider()
 
-
-
 # Correlation heatmap
-
 st.subheader("🔥 Feature Correlation Heatmap")
-
 
 corr = df.corr(
     numeric_only=True
 )
-
 
 fig = ff.create_annotated_heatmap(
     z=corr.values,
@@ -331,29 +260,20 @@ fig = ff.create_annotated_heatmap(
     colorscale="Viridis"
 )
 
-
 fig.update_layout(
     title="Correlation Between Numerical Features",
     height=600
 )
-
 
 # Display heatmap with correlation values
 st.plotly_chart(
     fig,
     use_container_width=True
 )
-
-
-
 st.divider()
 
-
-
 # Dataset preview section
-
 st.subheader("📄 Clean Dataset")
-
 
 with st.expander("View Dataset Preview"):
 
@@ -362,12 +282,9 @@ with st.expander("View Dataset Preview"):
         use_container_width=True
     )
 
-
-
 # Footer section
 
 st.divider()
-
 st.caption(
     "Developed using Python • Data Analysis • Machine Learning • Streamlit"
 )

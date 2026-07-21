@@ -11,21 +11,16 @@ st.set_page_config(
     layout="wide"
 )
 
-
-# ==========================================================
 # HOME PAGE
-# ==========================================================
 
 st.image(
     "https://cdn-icons-png.flaticon.com/512/888/888879.png",
     width=120
 )
 
-
 st.title("📱 Google Play Store Analytics")
 
 st.subheader("End-to-End ETL Pipeline & Machine Learning Project")
-
 
 st.write(
     """
@@ -35,9 +30,7 @@ st.write(
     """
 )
 
-
 st.divider()
-
 
 st.subheader("🚀 Project Overview")
 
@@ -51,9 +44,7 @@ st.info(
     """
 )
 
-
 st.divider()
-
 
 st.subheader("🎯 Objective")
 
@@ -67,12 +58,8 @@ st.write(
     """
 )
 
-
 st.divider()
 
-
-# ==========================================================
 # FOOTER
-# ==========================================================
 
 st.caption("Developed by Tanaya Bagul | Data Analytics & Machine Learning Project")

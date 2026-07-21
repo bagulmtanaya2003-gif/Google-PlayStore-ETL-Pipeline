@@ -2,25 +2,18 @@ import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
 
-# -------------------------------------------------
 # Page Configuration
-# -------------------------------------------------
-
 st.set_page_config(
     page_title="Feature Importance",
     page_icon="⭐",
     layout="wide"
 )
 
-# -------------------------------------------------
 # Load Feature Importance Data
-# -------------------------------------------------
 
 feature_df = pd.read_csv("feature_importance.csv")
 
-# -------------------------------------------------
 # Page Title
-# -------------------------------------------------
 
 st.title("⭐ Feature Importance")
 
@@ -30,9 +23,7 @@ st.write(
 
 st.divider()
 
-# -------------------------------------------------
 # Feature Importance Chart
-# -------------------------------------------------
 
 fig, ax = plt.subplots(figsize=(10, 6))
 
@@ -49,9 +40,7 @@ st.pyplot(fig)
 
 st.divider()
 
-# -------------------------------------------------
 # Top Features Table
-# -------------------------------------------------
 
 st.subheader("📋 Feature Importance Values")
 
@@ -62,9 +51,7 @@ st.dataframe(
 
 st.divider()
 
-# -------------------------------------------------
 # Key Insight
-# -------------------------------------------------
 
 st.success("""
 ### 💡 Key Insight

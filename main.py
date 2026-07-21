@@ -19,12 +19,10 @@ engine = create_engine(
     f"mysql+pymysql://{username}:{password}@{host}/{database}"
 )
 
-
 df = pd.read_csv("googleplaystore.csv")
 
 print(df.head())
 print(df.shape)
-
 
 df.to_sql(
     "playstore",

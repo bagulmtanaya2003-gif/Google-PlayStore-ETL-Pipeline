@@ -15,9 +15,7 @@ from reportlab.platypus import (
 from reportlab.lib.styles import getSampleStyleSheet
 from reportlab.lib import colors
 
-# ---------------------------------------------------
 # Page Configuration
-# ---------------------------------------------------
 
 st.set_page_config(
     page_title="Prediction | Google Play Store",
@@ -25,10 +23,7 @@ st.set_page_config(
     layout="wide"
 )
 
-# ---------------------------------------------------
 # Sidebar
-# ---------------------------------------------------
-
 with st.sidebar:
 
     st.image(
@@ -62,9 +57,7 @@ Predict App Success using
 """
     )
 
-# ---------------------------------------------------
 # Custom CSS
-# ---------------------------------------------------
 
 st.markdown("""
 <style>
@@ -102,9 +95,7 @@ border:1px solid #99c2ff;
 </style>
 """, unsafe_allow_html=True)
 
-# ---------------------------------------------------
 # Header
-# ---------------------------------------------------
 
 st.markdown("""
 
@@ -124,9 +115,8 @@ Machine Learning based Application Install Prediction System
 
 st.write("")
 
-# ---------------------------------------------------
 # Introduction
-# ---------------------------------------------------
+
 
 st.markdown("""
 
@@ -167,9 +157,7 @@ The prediction is based on:
 
 st.divider()
 
-# ---------------------------------------------------
 # PDF Report Generator
-# ---------------------------------------------------
 
 def generate_prediction_report(
         category,
@@ -250,10 +238,9 @@ def generate_prediction_report(
 
     story.append(Spacer(1,20))
 
-        # ---------------------------------------
-    # Prediction Result
-    # ---------------------------------------
 
+# Prediction Result
+ 
     result = (
         "High Install Potential"
         if prediction == 1
@@ -284,10 +271,8 @@ def generate_prediction_report(
 
     story.append(Spacer(1,20))
 
-    # ---------------------------------------
-    # AI Explanation
-    # ---------------------------------------
-
+# AI Explanation
+    
     story.append(
         Paragraph(
             "<b>AI Explanation</b>",
@@ -338,10 +323,9 @@ def generate_prediction_report(
 
     story.append(Spacer(1,20))
 
-    # ---------------------------------------
-    # Business Recommendation
-    # ---------------------------------------
-
+   
+# Business Recommendation
+  
     story.append(
         Paragraph(
             "<b>Business Recommendations</b>",
@@ -400,10 +384,7 @@ def generate_prediction_report(
 
     return buffer
 
-
-# ---------------------------------------------------
 # Load Model
-# ---------------------------------------------------
 
 try:
 
@@ -427,9 +408,7 @@ except Exception as e:
 
     st.stop()
 
-    # ---------------------------------------------------
-# Input Section
-# ---------------------------------------------------
+ # Input Section
 
 st.header("📱 Application Details")
 
@@ -499,9 +478,7 @@ with col2:
 
 st.write("")
 
-# ---------------------------------------------------
 # Prediction Button
-# ---------------------------------------------------
 
 if st.button(
     "🚀 Analyze Application",
@@ -567,10 +544,8 @@ if st.button(
 
     st.write("")
 
-    # ==========================================
-    # Probability Metrics
-    # ==========================================
-
+  # Probability Metrics
+   
     col1, col2 = st.columns(2)
 
     with col1:
@@ -589,10 +564,8 @@ if st.button(
 
     st.divider()
 
-    # ==========================================
-    # AI Explanation
-    # ==========================================
-
+# AI Explanation
+  
     st.subheader("🤖 AI Explanation")
 
     if prediction[0] == 1:
@@ -627,9 +600,7 @@ The model predicts **Low Install Potential** because:
 
     st.divider()
 
-    # ==========================================
-    # Business Recommendation
-    # ==========================================
+# Business Recommendation
 
     st.subheader("💼 Business Recommendations")
 
@@ -649,10 +620,8 @@ The model predicts **Low Install Potential** because:
 
     st.divider()
 
-    # ==========================================
-    # Generate PDF Report
-    # ==========================================
-
+ # Generate PDF Report
+  
     report = generate_prediction_report(
 
         category,
@@ -693,9 +662,7 @@ The model predicts **Low Install Potential** because:
 
     )
 
-    # ======================================================
-# Footer
-# ======================================================
+ # Footer
 
 st.divider()
 
