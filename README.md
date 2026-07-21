@@ -2,17 +2,18 @@
 
 An End-to-End ETL Pipeline and Machine Learning project that analyzes Google Play Store applications to identify the factors influencing app success and predicts whether an application has **High Install Potential** using a Random Forest Classifier.
 
----
+## 🚀 Live Demo
 
-# 📌 Project Overview
+🔗 **Streamlit Application:**  
+https://app-playstore-etl-pipeline-bj78vd5no873r568oneq96.streamlit.app/
 
-The Google Play Store contains thousands of applications across multiple categories. This project performs an end-to-end data analysis pipeline, including data extraction, cleaning, transformation, visualization, machine learning, and business insights.
+## 📌 Project Overview
+
+The Google Play Store contains thousands of applications across multiple categories. This project performs an end-to-end data analysis pipeline including data extraction, cleaning, transformation, visualization, machine learning, and business insights.
 
 The final solution is deployed as an interactive **Streamlit Dashboard** that allows users to explore data, visualize trends, and predict app success.
 
----
-
-# 🎯 Business Problem
+## 🎯 Business Problem
 
 Developers and businesses often struggle to understand:
 
@@ -23,9 +24,7 @@ Developers and businesses often struggle to understand:
 
 This project provides data-driven insights and a prediction system to support better business decisions.
 
----
-
-# 🎯 Project Objectives
+## 🎯 Project Objectives
 
 - Build an End-to-End ETL Pipeline
 - Clean and preprocess raw Google Play Store data
@@ -36,9 +35,7 @@ This project provides data-driven insights and a prediction system to support be
 - Build an interactive Streamlit Dashboard
 - Generate downloadable prediction reports
 
----
-
-# 🔄 ETL Pipeline
+## 🔄 ETL Pipeline
 
 ### Extract
 - Load Google Play Store dataset
@@ -49,16 +46,14 @@ This project provides data-driven insights and a prediction system to support be
 - Handle missing values
 - Clean Reviews, Price, Size, and Installs columns
 - Convert date columns
-- Feature Engineering
+- Perform Feature Engineering
 - Encode categorical variables
 
 ### Load
 - Store cleaned dataset in MySQL
 - Export cleaned dataset as CSV
 
----
-
-# 📊 Exploratory Data Analysis
+## 📊 Exploratory Data Analysis
 
 The dashboard includes:
 
@@ -72,9 +67,7 @@ The dashboard includes:
 - Correlation Heatmap
 - Applications Updated by Year
 
----
-
-# 🤖 Machine Learning
+## 🤖 Machine Learning
 
 ### Algorithms Used
 
@@ -84,13 +77,11 @@ The dashboard includes:
 
 ### Best Model
 
-Random Forest Classifier
+**Random Forest Classifier**
 
 The trained model predicts whether an application has **High Install Potential** based on multiple application features.
 
----
-
-# 📈 Features Used
+## 📈 Features Used
 
 - Category
 - Rating
@@ -102,9 +93,7 @@ The trained model predicts whether an application has **High Install Potential**
 - Year
 - Month
 
----
-
-# 🖥️ Streamlit Modules
+## 🖥️ Streamlit Modules
 
 - 🏠 Home
 - 📊 Dashboard
@@ -117,16 +106,12 @@ The trained model predicts whether an application has **High Install Potential**
 - 👨‍💻 About Developer
 - ❓ Help
 
----
+## 🛠️ Technology Stack
 
-# 🛠️ Technology Stack
-
-### Programming
-
+### Programming Language
 - Python
 
 ### Database
-
 - MySQL
 
 ### Libraries
@@ -148,11 +133,9 @@ The trained model predicts whether an application has **High Install Potential**
 - GitHub
 - MySQL Workbench
 
----
+## 📂 Project Structure
 
-# 📂 Project Structure
-
-```
+```text
 Google_PlayStore_ETL_Project
 │
 ├── app.py
@@ -181,102 +164,3 @@ Google_PlayStore_ETL_Project
 │   └── Help.py
 │
 └── screenshots
-```
-
----
-
-# 🚀 How to Run the Project
-
-## Clone Repository
-
-```bash
-git clone https://github.com/bagulmtanaya2003-gif
-```
-
-## Open Project
-
-```bash
-cd Google-PlayStore-ETL-Pipeline
-```
-
-## Install Dependencies
-
-```bash
-pip install -r requirements.txt
-```
-
-## Run Streamlit
-
-```bash
-streamlit run app.py
-```
-
----
-
-# 📸 Project Screenshots
-
-Add screenshots of:
-
-- Home
-- Dashboard
-- Prediction
-- Model Performance
-- Business Insights
-
-inside the **screenshots/** folder.
-
----
-
-# 💡 Business Insights
-
-- Higher ratings generally lead to increased installs.
-- Reviews strongly influence application popularity.
-- Free applications dominate the Google Play Store.
-- Regular updates improve user engagement.
-- Category selection impacts install potential.
-
----
-
-# 📥 Prediction Report
-
-The application can generate a downloadable PDF report containing:
-
-- User Inputs
-- Prediction Result
-- Model Confidence
-- AI Explanation
-- Business Recommendations
-
----
-
-# 👨‍💻 Developer
-
-**Tanaya Bagul**
-
-Aspiring Data Analyst | Data Scientist
-
-Skills:
-- Python
-- SQL
-- Machine Learning
-- Data Analytics
-- Streamlit
-- MySQL
-- Git & GitHub
-
----
-
-# ⭐ Future Improvements
-
-- Deep Learning Models
-- Hyperparameter Tuning
-- Model Deployment on Cloud
-- Live Data Integration
-- Interactive Power BI Dashboard
-
----
-
-# 📄 License
-
-This project is developed for educational and portfolio purposes.
-
