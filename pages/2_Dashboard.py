@@ -9,35 +9,31 @@ st.set_page_config(
     layout="wide"
 )
 
-
 # Sidebar section for project branding and information
 with st.sidebar:
 
-    # Display project logo image
+# Display project logo image
     st.image(
         "https://cdn-icons-png.flaticon.com/512/888/888879.png",
         width=85
     )
 
-    # Display project title
+# Display project title
     st.title("Google Play Store Analytics")
 
-    # Display project description
+# Display project description
     st.write("Interactive Machine Learning Dashboard")
 
-    # Display trained model information
+# Display trained model information
     st.success("Random Forest Regressor")
 
     st.divider()
 
-    # Dashboard filters
+# Dashboard filters
     st.subheader("🎛 Dashboard Filters")
-
-
 
 # Load cleaned dataset
 df = pd.read_csv("playstore_clean.csv")
-
 
 # Category filter
 selected_category = st.sidebar.multiselect(
@@ -53,17 +49,14 @@ selected_type = st.sidebar.multiselect(
     default=sorted(df["Type"].dropna().unique())
 )
 
-
 # Apply filters
 filtered_df = df[
     (df["Category"].isin(selected_category)) &
     (df["Type"].isin(selected_type))
 ]
 
-
 # Display main dashboard heading
 st.title("📊 Google Play Store Analytics Dashboard")
-
 
 # Dashboard description
 st.markdown("""
@@ -73,43 +66,34 @@ business insights and machine learning.
 Use the filters from the sidebar to explore different categories and app types.
 """)
 
-
 st.divider()
-
 
 # Calculate key performance indicators
 total_apps = len(filtered_df)
-
 avg_rating = round(
     filtered_df["Rating"].mean(),
     2
 )
-
 total_reviews = int(
     filtered_df["Reviews"].sum()
 )
-
 categories = filtered_df["Category"].nunique()
-
 free_apps = len(
     filtered_df[
         filtered_df["Type"] == "Free"
     ]
 )
-
 paid_apps = len(
     filtered_df[
         filtered_df["Type"] == "Paid"
     ]
 )
 
-
 # Create KPI cards
 col1, col2, col3 = st.columns(3)
-
 with col1:
 
-    # Display total number of applications
+# Display total number of applications
     st.metric(
         "📱 Total Apps",
         total_apps
@@ -117,7 +101,7 @@ with col1:
 
 with col2:
 
-    # Display average application rating
+# Display average application rating
     st.metric(
         "⭐ Average Rating",
         avg_rating
@@ -125,19 +109,18 @@ with col2:
 
 with col3:
 
-    # Display total reviews
+# Display total reviews
     st.metric(
         "📝 Total Reviews",
         f"{total_reviews:,}"
     )
-
 
 # Create second KPI row
 col4, col5, col6 = st.columns(3)
 
 with col4:
 
-    # Display total categories
+# Display total categories
     st.metric(
         "📂 Categories",
         categories
@@ -145,7 +128,7 @@ with col4:
 
 with col5:
 
-    # Display free applications
+# Display free applications
     st.metric(
         "🆓 Free Apps",
         free_apps
@@ -153,15 +136,13 @@ with col5:
 
 with col6:
 
-    # Display paid applications
+# Display paid applications
     st.metric(
         "💰 Paid Apps",
         paid_apps
     )
 
-
 st.divider()
-
 
 # Business insights
 st.info(
@@ -181,10 +162,9 @@ st.info(
 # Create first row for charts
 col1, col2 = st.columns(2)
 
-
 with col1:
 
-    # Display rating distribution chart
+# Display rating distribution chart
     st.subheader("⭐ Rating Distribution")
 
     fig, ax = plt.subplots(
@@ -219,10 +199,9 @@ with col1:
         "Most applications have ratings between 4.0 and 4.5."
     )
 
-
 with col2:
 
-    # Display free and paid application comparison
+# Display free and paid application comparison
     st.subheader("💰 Free vs Paid Applications")
 
     type_count = (
@@ -251,17 +230,14 @@ with col2:
         "Free applications dominate the Google Play Store."
     )
 
-
 st.divider()
-
 
 # Create second row for charts
 col1, col2 = st.columns(2)
 
-
 with col1:
 
-    # Display top application categories
+# Display top application categories
     st.subheader("📂 Top 10 Categories")
 
     top_category = (
@@ -300,7 +276,7 @@ with col1:
 
 with col2:
 
-    # Display categories with highest installs
+# Display categories with highest installs
     st.subheader("🚀 Top Categories by Installs")
 
     installs = (
@@ -348,7 +324,6 @@ with col2:
 
 st.divider()
 
-
 # Dashboard insights section
 st.subheader("📈 Key Insights")
 
@@ -381,7 +356,6 @@ st.divider()
 # Add separator before dataset section
 st.divider()
 
-
 # Dataset statistics section
 st.subheader("📈 Dataset Statistics")
 
@@ -394,14 +368,12 @@ with col1:
         round(filtered_df["Rating"].max(), 2)
     )
 
-
 with col2:
 
     st.metric(
         "Lowest Rating",
         round(filtered_df["Rating"].min(), 2)
     )
-
 
 with col3:
 
@@ -410,7 +382,6 @@ with col3:
         f"{int(filtered_df['Installs'].max()):,}"
     )
 
-
 with col4:
 
     st.metric(
@@ -418,19 +389,15 @@ with col4:
         f"{int(filtered_df['Reviews'].mean()):,}"
     )
 
-
 st.divider()
-
 
 # Dataset preview section
 st.subheader("📄 Clean Dataset Preview")
-
 
 st.markdown("""
 Explore the cleaned Google Play Store dataset used for
 analysis and machine learning.
 """)
-
 
 with st.expander("📂 View Dataset"):
 
@@ -439,7 +406,6 @@ with st.expander("📂 View Dataset"):
         use_container_width=True,
         height=400
     )
-
 
 st.download_button(
 
@@ -452,13 +418,10 @@ st.download_button(
     mime="text/csv"
 )
 
-
 st.divider()
-
 
 # Project summary section
 st.subheader("📋 Dashboard Summary")
-
 
 st.success("""
 
@@ -478,7 +441,6 @@ st.success("""
 
 """)
 
-
 st.info("""
 
 ### 💡 Business Recommendation
@@ -493,15 +455,10 @@ st.info("""
 
 """)
 
-
 st.divider()
 
-
 # Footer section
-
 st.markdown("---")
-
-st.markdown(
 """
 <div style='text-align:center;'>
 
