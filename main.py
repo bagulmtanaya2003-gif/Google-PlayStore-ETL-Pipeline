@@ -9,7 +9,7 @@ from sqlalchemy import create_engine
 from urllib.parse import quote_plus
 
 username = "root"
-password = quote_plus("Tanaya@2003")
+password = quote_plus(""Your Mysql password"")
 
 host = "localhost"
 database = "google_playstore_db"
